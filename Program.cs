@@ -4,55 +4,54 @@
 
 int[] firstArray = new int[7];
 
-void FirstArray(int[] arr)
+void Array(int[] array)
 {
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        arr[i] = new Random().Next(3, 12);
+        array[i] = new Random().Next(3, 12);
     }
 }
 
-void PrintArray(int[] arr2)
+void PrintArray(int[] array)
 {
-    
-    for (int i = 0; i < arr2.Length; i++)
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{arr2[i]}, ");
+        Console.Write($"{array[i]}, ");
     }
     Console.Write("]");
 }
 
-int [] SecondArray (int [] arr3) 
+int [] AlteredArray (int [] array, int argument) 
 { 
    
     int size = 0;
-    for (int i = 0; i < arr3.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (arr3[i] > 8)
+        if (array[i] > argument )
         {
             size = size + 1;
         }
     }
-    int [] temp = new int[size];
-    int j =0;
-    for (int i = 0; i < arr3.Length; i++)
+    int [] secondArray = new int[size];
+    int index =0;
+    for (int i = 0; i < array.Length; i++)
     {
 
-        if (arr3[i] > 8)
+        if (array[i] > argument )
         {
-            temp[j] = arr3[i];
-            j++;
+            secondArray[index] = array[i];
+            index++;
         }
     }
-    return temp;
+    return secondArray;
  } 
 
-
-FirstArray(firstArray);
+int [] secondArray = AlteredArray(firstArray, 8);
+Array(firstArray);
 PrintArray(firstArray);
 Console.Write(" => ");
-Console.Write("[");
-PrintArray(SecondArray(firstArray)); 
+PrintArray(secondArray); 
 
 
 
