@@ -2,8 +2,7 @@
 //формирует массив из чисел, больших 8. Первоначальный массив можно ввести с клавиатуры, 
 //либо сгенерировать случайным образом. 
 
-int[] array = new int[7];
-int[] secondArray = new int[array.Length]; 
+int[] firstArray = new int[7];
 
 void FirstArray(int[] arr)
 {
@@ -23,26 +22,38 @@ void PrintArray(int[] arr2)
     Console.Write("]");
 }
 
-void SecondArray(int [] temp, int [] arr3) 
+int [] SecondArray (int [] arr3) 
 { 
-    for (int i = 0; i < temp.Length; i++) 
-    { 
-        
-        if(temp[i] > 8 )  
-        { 
-            arr3[i] = temp[i]; 
-            Console.Write(arr3[i] + ", "); 
-        } 
-        
-    } 
-} 
+   
+    int size = 0;
+    for (int i = 0; i < arr3.Length; i++)
+    {
+        if (arr3[i] > 8)
+        {
+            size = size + 1;
+        }
+    }
+    int [] temp = new int[size];
+    int j =0;
+    for (int i = 0; i < arr3.Length; i++)
+    {
+
+        if (arr3[i] > 8)
+        {
+            temp[j] = arr3[i];
+            j++;
+        }
+    }
+    return temp;
+ } 
 
 
-FirstArray(array);
-PrintArray(array);
+FirstArray(firstArray);
+PrintArray(firstArray);
 Console.Write(" => ");
 Console.Write("[");
-SecondArray(array, secondArray); 
-Console.WriteLine("]");
+PrintArray(SecondArray(firstArray)); 
+
+
 
 
