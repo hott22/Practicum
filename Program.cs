@@ -49,9 +49,9 @@ int [] AlteredArray (int [] array, int argument)
 
 
 Array(firstArray);
-int [] secondArray = AlteredArray(firstArray, 8);
 PrintArray(firstArray);
 Console.Write(" => ");
+int [] secondArray = AlteredArray(firstArray, 8);
 PrintArray(secondArray); 
 
 
